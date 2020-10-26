@@ -11,6 +11,7 @@ public class App {
         ApplicationContext container = new AnnotationConfigApplicationContext(AppConfig.class);
         Course course = container.getBean("java", Course.class);
         course.getTeachingHours();
+        System.out.println(course.toString());
     }
 
 }
