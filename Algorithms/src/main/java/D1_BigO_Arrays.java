@@ -1,13 +1,13 @@
 import java.util.Arrays;
 
-public class Algorithms_Day1 {
+public class D1_BigO_Arrays {
 
     public static void main(String[] args) {
 
         int[] arr = {5,22,44,67,8,87,56,43,2};
     //1. Reverse order of an array of unordered integers.
-        System.out.println(Arrays.toString(Arrays.stream(new Algorithms_Day1().reverseAnArrayWithExtraSpace(arr)).toArray()));
-        System.out.println(Arrays.toString(Arrays.stream(new Algorithms_Day1().reverseAnArrayWithNoExtraSpace(arr)).toArray()));
+        System.out.println(Arrays.toString(Arrays.stream(new D1_BigO_Arrays().reverseAnArrayWithExtraSpace(arr)).toArray()));
+        System.out.println(Arrays.toString(Arrays.stream(new D1_BigO_Arrays().reverseAnArrayWithNoExtraSpace(arr)).toArray()));
 
 
 //        int[][] matrix1 = {{10,11,12},{13,14,15},{16,17,18}};
@@ -26,7 +26,7 @@ public class Algorithms_Day1 {
             System.out.println();
         });
 
-        int[][] rotatedMatrixWithExtraSpace = new Algorithms_Day1().rotateAnMatrix90DegreesRightInPlaceWithExtraSpace(matrix1);
+        int[][] rotatedMatrixWithExtraSpace = new D1_BigO_Arrays().rotateAnMatrix90DegreesRightInPlaceWithExtraSpace(matrix1);
         System.out.println("***Rotated Matrix Using Extra Space***");
         Arrays.stream(rotatedMatrixWithExtraSpace).forEach(a -> {
             Arrays.stream(a).forEach(n -> {
@@ -35,7 +35,7 @@ public class Algorithms_Day1 {
             System.out.println();
         });
 
-        int[][] rotatedMatrixWithNoExtraSpace = new Algorithms_Day1().rotateAnMatrix90DegreesRightInPlaceWithNoExtraSpace(matrix2);
+        int[][] rotatedMatrixWithNoExtraSpace = new D1_BigO_Arrays().rotateAnMatrix90DegreesRightInPlaceWithNoExtraSpace(matrix2);
         System.out.println("***Rotated Matrix Without using Extra Space***");
         Arrays.stream(rotatedMatrixWithNoExtraSpace).forEach(a -> {
             Arrays.stream(a).forEach(n -> {
