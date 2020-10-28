@@ -143,4 +143,8 @@ public class LinkedList {
         return a.value;
     }
 
+    //Find the middle of a linked list in one pass
+    public void printMiddle() {
+
+    }
 }
