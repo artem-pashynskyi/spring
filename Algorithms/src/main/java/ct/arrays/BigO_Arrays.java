@@ -16,6 +16,7 @@ public class BigO_Arrays {
 //        int[][] matrix2 = {{10,11,12},{13,14,15},{16,17,18}};
         int[][] matrix1 = {{10,11,12,13},{14,15,16,17},{18,19,20,21},{22,23,24,25}};
         int[][] matrix2 = {{10,11,12,13},{14,15,16,17},{18,19,20,21},{22,23,24,25}};
+        int[][] matrix3 = {{10,11,12,13},{14,15,16,17},{18,19,20,21},{22,23,24,25}};
 //        int[][] matrix1 = {{10,11,12,13,14},{15,16,17,18,19},{20,21,22,23,24},{25,26,27,28,29},{30,31,32,33,34}};
 //        int[][] matrix2 = {{10,11,12,13,14},{15,16,17,18,19},{20,21,22,23,24},{25,26,27,28,29},{30,31,32,33,34}};
     //2. Rotate an (n x n) matrix 90 degrees right in place.
@@ -46,6 +47,15 @@ public class BigO_Arrays {
             System.out.println();
         });
 
+        int[][] rotatedMatrixWithNoExtraSpace2 = new BigO_Arrays().rotateAnMatrix90DegreesRightInPlaceWithNoExtraSpace2(matrix3);
+        System.out.println("***Rotated Matrix Without using Extra Space***");
+        Arrays.stream(rotatedMatrixWithNoExtraSpace2).forEach(a -> {
+            Arrays.stream(a).forEach(n -> {
+                System.out.print(n + " ");
+            });
+            System.out.println();
+        });
+
     }
 
     public int[][] rotateAnMatrix90DegreesRightInPlaceWithExtraSpace(int[][] matrix) {
@@ -70,6 +80,19 @@ public class BigO_Arrays {
                 matrix[j][matrix.length-1-i] = coord1;
                 matrix[matrix.length-1-i][matrix.length-1-j] = coord2;
                 matrix[matrix.length-1-j][i] = coord3;
+            }
+        }
+        return matrix;
+    }
+
+    public int[][] rotateAnMatrix90DegreesRightInPlaceWithNoExtraSpace2(int[][] matrix) {
+        for(int i = 0; i < matrix.length/2; i++) {
+            for(int j = i ; j < matrix.length-1-i ; j++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[matrix.length-1-j][i];
+                matrix[matrix.length-1-j][i] = matrix[matrix.length-1-i][matrix.length-1-j];
+                matrix[matrix.length-1-i][matrix.length-1-j] = matrix[j][matrix.length-1-i];
+                matrix[j][matrix.length-1-i] = temp;
             }
         }
         return matrix;
