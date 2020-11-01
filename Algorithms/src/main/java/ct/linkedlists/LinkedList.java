@@ -28,7 +28,7 @@ public class LinkedList {
 
     public void addLast(int item) {
         Node node = new Node(item);
-        System.out.println("Adding and item: " + item);
+        System.out.println("Adding last item : " + item);
         if(isEmpty())
             first = last = node;
         else {
@@ -142,5 +142,84 @@ public class LinkedList {
         }
         return true;
     }
+
+    //10 20 30 40 30 20 10
+    public boolean isPalindrome2() {
+        var a = first;
+        var b = first;
+        while(b.next != null && b.next.next != null) {
+            a = a.next;
+            b = b.next.next;
+        }
+
+        if(b.next != null)
+            a = a.next.next;
+        else {
+            a = a.next;
+        }
+
+        var bReversed = new Node(a.value);
+        var current = a;
+        var next = current.next;
+        while(current.next != null) {
+            next = current.next;
+            current.next = next.next;
+            next.next = bReversed;
+            bReversed = next;
+        }
+
+        var list1 = first;
+        var list2 = bReversed;
+
+        while(list2 != null) {
+            if(list1.value != list2.value)
+                return false;
+            list1 = list1.next;
+            list2 = list2.next;
+        }
+
+        return true;
+    }
+
+    //10 40 15 20 30 70 25 50 -> 70 50 40 30 25 20 15 10
+    public void sortListDesc() {
+        var current = first;
+        var next = first;
+
+        while(current != null) {
+            next = current.next;
+
+            while(next != null) {
+                if(next.value > current.value) {
+                    var temp = current.value;
+                    current.value = next.value;
+                    next.value = temp;
+                }
+                next = next.next;
+            }
+            current = current.next;
+        }
+    }
+
+    //10 40 15 20 30 70 25 50 -> 10 15 20 25 30 40 50 70
+    public void sortListAsc() {
+        var current = first;
+        var next = first;
+
+        while(current != null) {
+            next = current.next;
+
+            while(next != null) {
+                if(next.value < current.value) {
+                    var temp = current.value;
+                    current.value = next.value;
+                    next.value = temp;
+                }
+                next = next.next;
+            }
+            current = current.next;
+        }
+    }
+
 
 }
