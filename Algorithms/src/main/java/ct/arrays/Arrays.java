@@ -1,15 +1,13 @@
 package ct.arrays;
 
-import java.util.Arrays;
-
-public class BigO_Arrays {
+public class Arrays {
 
     public static void main(String[] args) {
 
         int[] arr = {5,22,44,67,8,87,56,43,2};
     //1. Reverse order of an array of unordered integers.
-        System.out.println(Arrays.toString(Arrays.stream(new BigO_Arrays().reverseAnArrayWithExtraSpace(arr)).toArray()));
-        System.out.println(Arrays.toString(Arrays.stream(new BigO_Arrays().reverseAnArrayWithNoExtraSpace(arr)).toArray()));
+        System.out.println(java.util.Arrays.toString(java.util.Arrays.stream(new Arrays().reverseAnArrayWithExtraSpace(arr)).toArray()));
+        System.out.println(java.util.Arrays.toString(java.util.Arrays.stream(new Arrays().reverseAnArrayWithNoExtraSpace(arr)).toArray()));
 
 
 //        int[][] matrix1 = {{10,11,12},{13,14,15},{16,17,18}};
@@ -22,35 +20,35 @@ public class BigO_Arrays {
     //2. Rotate an (n x n) matrix 90 degrees right in place.
 
         System.out.println("***Initial Matrix***");
-        Arrays.stream(matrix1).forEach(a -> {
-            Arrays.stream(a).forEach(n -> {
+        java.util.Arrays.stream(matrix1).forEach(a -> {
+            java.util.Arrays.stream(a).forEach(n -> {
                 System.out.print(n + " ");
             });
             System.out.println();
         });
 
-        int[][] rotatedMatrixWithExtraSpace = new BigO_Arrays().rotateAnMatrix90DegreesRightInPlaceWithExtraSpace(matrix1);
+        int[][] rotatedMatrixWithExtraSpace = new Arrays().rotateAnMatrix90DegreesRightInPlaceWithExtraSpace(matrix1);
         System.out.println("***Rotated Matrix Using Extra Space***");
-        Arrays.stream(rotatedMatrixWithExtraSpace).forEach(a -> {
-            Arrays.stream(a).forEach(n -> {
+        java.util.Arrays.stream(rotatedMatrixWithExtraSpace).forEach(a -> {
+            java.util.Arrays.stream(a).forEach(n -> {
                 System.out.print(n + " ");
             });
             System.out.println();
         });
 
-        int[][] rotatedMatrixWithNoExtraSpace = new BigO_Arrays().rotateAnMatrix90DegreesRightInPlaceWithNoExtraSpace(matrix2);
+        int[][] rotatedMatrixWithNoExtraSpace = new Arrays().rotateAnMatrix90DegreesRightInPlaceWithNoExtraSpace(matrix2);
         System.out.println("***Rotated Matrix Without using Extra Space***");
-        Arrays.stream(rotatedMatrixWithNoExtraSpace).forEach(a -> {
-            Arrays.stream(a).forEach(n -> {
+        java.util.Arrays.stream(rotatedMatrixWithNoExtraSpace).forEach(a -> {
+            java.util.Arrays.stream(a).forEach(n -> {
                 System.out.print(n + " ");
             });
             System.out.println();
         });
 
-        int[][] rotatedMatrixWithNoExtraSpace2 = new BigO_Arrays().rotateAnMatrix90DegreesRightInPlaceWithNoExtraSpace2(matrix3);
+        int[][] rotatedMatrixWithNoExtraSpace2 = new Arrays().rotateAnMatrix90DegreesRightInPlaceWithNoExtraSpace2(matrix3);
         System.out.println("***Rotated Matrix Without using Extra Space***");
-        Arrays.stream(rotatedMatrixWithNoExtraSpace2).forEach(a -> {
-            Arrays.stream(a).forEach(n -> {
+        java.util.Arrays.stream(rotatedMatrixWithNoExtraSpace2).forEach(a -> {
+            java.util.Arrays.stream(a).forEach(n -> {
                 System.out.print(n + " ");
             });
             System.out.println();
@@ -59,7 +57,7 @@ public class BigO_Arrays {
     }
 
     public int[][] rotateAnMatrix90DegreesRightInPlaceWithExtraSpace(int[][] matrix) {
-        int[][] copyOfMatrix = Arrays.stream(matrix).map(int[]::clone).toArray(int[][]::new);
+        int[][] copyOfMatrix = java.util.Arrays.stream(matrix).map(int[]::clone).toArray(int[][]::new);
         for (int i = 0 ; i < matrix.length ; i++) {
             for (int j = 0 ; j < matrix[i].length ; j++) {
                 matrix[i][matrix[i].length-(j+1)] = copyOfMatrix[j][i];
@@ -99,7 +97,7 @@ public class BigO_Arrays {
     }
 
     public int[] reverseAnArrayWithExtraSpace(int[] arr) {
-        int[] newArr = Arrays.stream(arr).toArray();
+        int[] newArr = java.util.Arrays.stream(arr).toArray();
         for (int i = 0 ; i < arr.length ; i++) {
             newArr[i] = arr[arr.length - (i+1)];
         }
