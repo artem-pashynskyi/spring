@@ -8,4 +8,5 @@ public class Main {
         tree.insert(15);
         tree.insert(6);
     }
+
 }
