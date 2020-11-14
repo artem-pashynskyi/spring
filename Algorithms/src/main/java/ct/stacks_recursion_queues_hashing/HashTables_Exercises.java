@@ -3,7 +3,7 @@ package ct.stacks_recursion_queues_hashing;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class HashTables_Sets_Exercises {
+public class HashTables_Exercises {
     public static void main(String[] args) {
         String str1 = "a green apple";
         System.out.println(firstNonRepeatedChar(str1));
