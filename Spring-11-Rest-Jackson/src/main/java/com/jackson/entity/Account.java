@@ -17,7 +17,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "account_details")
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-@JsonIgnoreProperties(value = {"state", "postal_code"}, ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"state", "postal_code", "hibernate_lazy_initializer"}, ignoreUnknown = true)
 public class Account extends BaseEntity {
 
     private String name;
