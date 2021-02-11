@@ -22,3 +22,6 @@ spring:
 security:
   jwt:
     secret-key: someKey
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
