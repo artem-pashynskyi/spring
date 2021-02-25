@@ -16,7 +16,7 @@ import java.util.List;
 
 @Aspect
 @Configuration
-public class LoginAspect {
+public class LoggingAspect {
     Logger logger = LoggerFactory.getLogger(ProductController.class);
 
 //    //1 option
