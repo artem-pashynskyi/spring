@@ -15,7 +15,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.*;
@@ -36,7 +35,7 @@ class TaskServiceImplTest {
     void findByIdTest(long arg) {
         Task task = new Task();
         when(taskRepository.findById(arg)).thenReturn(Optional.of(task));
-        when(mapperUtil.convert(task, new TaskDTO())).thenReturn(new TaskDTO());
+        when(mapperUtil.convert(any(), any())).thenReturn(new TaskDTO());
         taskServiceImpl.findById(arg);
         verify(taskRepository.findById(arg));
     }
@@ -46,7 +45,7 @@ class TaskServiceImplTest {
         //given
         Task task = new Task();
         given(taskRepository.findById(Mockito.anyLong())).willReturn(Optional.of(task));
-        given(mapperUtil.convert(task, new TaskDTO())).willReturn(new TaskDTO());
+        given(mapperUtil.convert(any(), any())).willReturn(new TaskDTO());
         //when
         taskServiceImpl.findById(Mockito.anyLong());
         //then
